@@ -36,11 +36,6 @@ router
   .delete(protect, restricTo("admin", "lead-guide"), deleteTour)
   .patch(protect, restricTo("admin", "lead-guide", "guide"), updateTour);
 
-// Nested Routes
-// post /api/tours/12345/reviews > tura yeni bir yorum ekleme
-// get /api/tours/12345/reviews > tura ait olan bütün yorumları al
-// get /api/tours/12345/reviews/12343124 > tura ait olan yorumlarınn arasından belirli id'li yorumu al
-
 router
   .route("/:tourId/reviews")
   .get(reviewController.getAllReviews)
